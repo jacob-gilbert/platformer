@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqyrp0dvxcyd7"]
+[gd_scene load_steps=7 format=3 uid="uid://bqyrp0dvxcyd7"]
 
 [ext_resource type="PackedScene" uid="uid://cvbug2sf2ywdk" path="res://scenes/UI/title_screen.tscn" id="1_liejx"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pkrp1"]
@@ -20,9 +20,17 @@ level_completed = false
 level_unlocked = false
 level_path = "levels\\level_02"
 
+[sub_resource type="Resource" id="Resource_6iaub"]
+script = ExtResource("2_jbt3i")
+level_id = 3
+level_name = "Third Level"
+level_completed = false
+level_unlocked = false
+level_path = "levels\\level_03"
+
 [node name="Main" type="Node"]
 script = ExtResource("1_pkrp1")
-available_levels = Array[ExtResource("2_jbt3i")]([SubResource("Resource_se5bv"), SubResource("Resource_3kqcd")])
+available_levels = Array[ExtResource("2_jbt3i")]([SubResource("Resource_se5bv"), SubResource("Resource_3kqcd"), SubResource("Resource_6iaub")])
 
 [node name="UIMain" type="CanvasLayer" parent="."]
 

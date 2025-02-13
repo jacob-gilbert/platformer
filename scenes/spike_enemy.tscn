@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfxywo3ys8iq"]
+
+[ext_resource type="Texture2D" uid="uid://bga0q1vuo7k3i" path="res://assets/Character_Tilemap/tilemap-characters_packed.png" id="1_y1wa6"]
+[ext_resource type="PackedScene" uid="uid://c1ts1ck6u4wya" path="res://scenes/killzone.tscn" id="2_640da"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3p0f"]
+atlas = ExtResource("1_y1wa6")
+region = Rect2(168, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pex0h"]
+atlas = ExtResource("1_y1wa6")
+region = Rect2(144, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf4a2"]
+atlas = ExtResource("1_y1wa6")
+region = Rect2(192, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hacj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3p0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pex0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf4a2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qmmf1"]
+radius = 7.0
+
+[node name="SpikeEnemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hacj3")
+autoplay = "default"
+frame_progress = 0.524437
+
+[node name="Killzone" parent="." instance=ExtResource("2_640da")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_qmmf1")

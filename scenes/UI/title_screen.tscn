@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvbug2sf2ywdk"]
+[gd_scene load_steps=7 format=3 uid="uid://cvbug2sf2ywdk"]
 
 [ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_vgt22"]
 [ext_resource type="Texture2D" uid="uid://dklxxelkxfbeq" path="res://assets/Character_Tilemap/tilemap-backgrounds_packed.png" id="2_7xd1c"]
@@ -10,13 +10,18 @@ subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_d0eug"]
 font = SubResource("SystemFont_c2n33")
-font_size = 88
+font_size = 90
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_qcb10"]
 font_weight = 700
 subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvi0n"]
+font_size = 30
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -57,7 +62,7 @@ theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="BackGround/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Platformer Game"
+text = "Key Hunter Demo"
 label_settings = SubResource("LabelSettings_d0eug")
 
 [node name="PlayButton" type="Button" parent="BackGround/MarginContainer/VBoxContainer"]
@@ -68,14 +73,6 @@ theme_override_fonts/font = SubResource("SystemFont_qcb10")
 theme_override_font_sizes/font_size = 65
 text = "PLAY GAME"
 
-[node name="SettingsButton" type="Button" parent="BackGround/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = SubResource("SystemFont_qcb10")
-theme_override_font_sizes/font_size = 65
-text = "SETTINGS"
-
 [node name="QuitButton" type="Button" parent="BackGround/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
@@ -84,6 +81,17 @@ theme_override_fonts/font = SubResource("SystemFont_qcb10")
 theme_override_font_sizes/font_size = 65
 text = "QUIT"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 464.0
+offset_right = 806.0
+offset_bottom = 596.0
+text = "Collect the key to open the lock
+Press space to Jump
+Arrow keys for left and right"
+label_settings = SubResource("LabelSettings_kvi0n")
+horizontal_alignment = 1
+
 [connection signal="pressed" from="BackGround/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="BackGround/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="BackGround/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

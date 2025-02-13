@@ -4,7 +4,10 @@ extends Area2D
 @onready var timer: Timer = $Timer
 
 func _on_body_entered(body: Node2D) -> void:
-	timer.start()
+	if body.name == "player":
+		body.get_node("CollisionShape2D").queue_free()
+		body.modulate = Color("Red")
+		timer.start()
 	
 
 

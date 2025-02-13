@@ -2,9 +2,8 @@ class_name MainMenu
 extends Control
 
 
-
 func _on_play_button_pressed() -> void:
-	LevelManager.load_level(2)
+	LevelManager.load_level(1)
 	deactivate()
 
 

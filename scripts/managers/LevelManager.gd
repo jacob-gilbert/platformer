@@ -15,11 +15,11 @@ func unload_level() -> void:
 func load_level(level_id : int) -> void:
 	print("Loading Level: %s" % level_id)
 	unload_level()
+		
 	
 	var level_data = get_level_data_by_id(level_id)
 	
 	if not level_data:
-		print("here")
 		return
 		
 	var level_path = "res://scenes/%s.tscn" % level_data.level_path
@@ -36,7 +36,6 @@ func  get_level_data_by_id(id : int) -> LevelData:
 	var level_to_return : LevelData = null
 	
 	for lvl : LevelData in levels:
-		print(lvl.level_id)
 		if lvl.level_id == id:
 			level_to_return = lvl
 			
